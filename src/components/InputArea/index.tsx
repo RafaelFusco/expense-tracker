@@ -28,7 +28,7 @@ export const InputArea = ({ onAdd }: Props) => {
     if(titleField === '') {
       errors.push('Título vazio!');
     }
-    if(valueField <= 0) {
+    if(valueField == null) {
       errors.push('Valor inválido!');
     }
 
@@ -71,11 +71,11 @@ export const InputArea = ({ onAdd }: Props) => {
         </C.InputLabel>
         <C.InputLabel>
           <C.InputTitle>Título</C.InputTitle>
-          <C.Input type="text" value={titleField} onChange={e => setTitleField(e.target.value)} />
+          <C.Input type="text" value={titleField} onChange={e => setTitleField(e.target.value)} maxLength={7} />
         </C.InputLabel>
         <C.InputLabel>
           <C.InputTitle>Valor</C.InputTitle>
-          <C.Input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))} />
+          <C.Input type="number" value={isNaN(valueField) ? 0 : valueField} onChange={e => setValueField(isNaN(parseFloat(e.target.value)) ? 0 : parseFloat(e.target.value))} />
         </C.InputLabel>
       
         <C.InputLabel>

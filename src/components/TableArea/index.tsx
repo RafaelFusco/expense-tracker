@@ -4,9 +4,12 @@ import * as C from './styles'
 
 type Props = {
     list: Item[]
+    onClick1: (item: Item) => void
 }
 
-export const TableArea = ({ list }: Props) => {
+export const TableArea = ({ list, onClick1 }: Props) => {
+
+
     return (
         <C.Table>
             <thead>
@@ -19,7 +22,7 @@ export const TableArea = ({ list }: Props) => {
             </thead>
             <tbody>
                 {list.map((item, index) => (
-                    <TableItem key={index} item={item} />
+                    <TableItem key={index} item={item} onClick2={() => onClick1(item)}/>
                 ))}
             </tbody>
         </C.Table>

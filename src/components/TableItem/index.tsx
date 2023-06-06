@@ -5,9 +5,13 @@ import { categories } from '../../data/categories'
 
 type Props = {
     item: Item
+    onClick2: () => void
 }
 
-export const TableItem = ({ item }: Props) => {
+export const TableItem = ({ item, onClick2 }: Props) => {
+
+
+
     return (
         <C.TableLine>
             <C.TableColumn>{formatDate(item.date)}</C.TableColumn>
@@ -26,6 +30,9 @@ export const TableItem = ({ item }: Props) => {
                     color={categories[item.category].expense ? 'red' : 'green'}>
                     R$ {item.value}
                 </C.Value>
+            </C.TableColumn>
+            <C.TableColumn>
+                <C.Button onClick={onClick2}/>
             </C.TableColumn>
         </C.TableLine>
     )

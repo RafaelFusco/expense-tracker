@@ -50,6 +50,17 @@ const App = () => {
     setList(newList)
   }
 
+  const handleDelItem = (item: Item) => {
+    let newList = [...list]
+    let index = newList.indexOf(item)
+    if(index > -1) {
+      newList.splice(index, 1)
+    }
+    setList(newList)
+    console.log('foi errado');
+    
+  }
+
   return (
     <C.Container>
       <C.Header>
@@ -66,7 +77,7 @@ const App = () => {
 
         <InputArea onAdd={handleAddItem}/>
 
-        <TableArea list={filteredList} />
+        <TableArea list={filteredList} onClick1={handleDelItem}/>
 
       </C.Body>
     </C.Container>

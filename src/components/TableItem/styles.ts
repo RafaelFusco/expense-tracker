@@ -5,11 +5,11 @@ export const TableLine = styled.tr`
 `
 
 export const TableColumn = styled.td< { padding?: string }>`
-    padding: 10px 0;
+    padding: 10px 5px 10px 0;
 `
 export const Category = styled.div<{ color: string }>`
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px 5px;
     border-radius: 5px;
     color: #FFF;
     background-color: ${props => props.color};
@@ -17,4 +17,9 @@ export const Category = styled.div<{ color: string }>`
 
 export const Value = styled.div<{ color: string }>`
     color: ${props => props.color};
+`
+
+export const Button = styled.button`
+    width: 30px;
+    height: 30px;
 `
