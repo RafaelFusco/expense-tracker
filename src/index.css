@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: black;
-  background-color: white;
+  background-color: #DDD;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,4 +17,19 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
 }

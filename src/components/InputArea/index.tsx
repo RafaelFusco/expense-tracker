@@ -19,20 +19,20 @@ export const InputArea = ({ onAdd }: Props) => {
   const handleAddEvent = () => {
     let errors: string[] = [];
 
-    if(isNaN(new Date(dateField).getTime())) {
+    if (isNaN(new Date(dateField).getTime())) {
       errors.push('Data inválida!');
     }
-    if(!categoryKeys.includes(categoryField)) {
+    if (!categoryKeys.includes(categoryField)) {
       errors.push('Categoria inválida!');
     }
-    if(titleField === '') {
+    if (titleField === '') {
       errors.push('Título vazio!');
     }
-    if(valueField == null) {
+    if (valueField == null) {
       errors.push('Valor inválido!');
     }
 
-    if(errors.length > 0) {
+    if (errors.length > 0) {
       alert(errors.join("\n"));
     } else {
       onAdd({
@@ -53,35 +53,35 @@ export const InputArea = ({ onAdd }: Props) => {
   }
 
   return (
-      <C.Container>
-        <C.InputLabel>
-          <C.InputTitle>Data</C.InputTitle>
-          <C.Input type="date" value={dateField} onChange={e => setDateField(e.target.value)} />
-        </C.InputLabel>
-        <C.InputLabel>
-          <C.InputTitle>Categoria</C.InputTitle>
-          <C.Select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
-            <>
-              <option></option>
-              {categoryKeys.map((key, index) => (
-                <option key={index} value={key}>{categories[key].title}</option>
-              ))}
-            </>
-          </C.Select>
-        </C.InputLabel>
-        <C.InputLabel>
-          <C.InputTitle>Título</C.InputTitle>
-          <C.Input type="text" value={titleField} onChange={e => setTitleField(e.target.value)} maxLength={7} />
-        </C.InputLabel>
-        <C.InputLabel>
-          <C.InputTitle>Valor</C.InputTitle>
-          <C.Input type="number" value={isNaN(valueField) ? 0 : valueField} onChange={e => setValueField(isNaN(parseFloat(e.target.value)) ? 0 : parseFloat(e.target.value))} />
-        </C.InputLabel>
-      
-        <C.InputLabel>
-          <C.InputTitle>&nbsp;</C.InputTitle>
-          <C.Button onClick={handleAddEvent}>Adicionar</C.Button>
-        </C.InputLabel>
-      </C.Container>
+    <C.Container>
+      <C.InputLabel>
+        <C.InputTitle>Data</C.InputTitle>
+        <C.Input type="date" value={dateField} onChange={e => setDateField(e.target.value)} />
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputTitle>Categoria</C.InputTitle>
+        <C.Select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
+          <>
+            <option></option>
+            {categoryKeys.map((key, index) => (
+              <option key={index} value={key}>{categories[key].title}</option>
+            ))}
+          </>
+        </C.Select>
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputTitle>Título</C.InputTitle>
+        <C.Input type="text" value={titleField} onChange={e => setTitleField(e.target.value)} maxLength={7} />
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputTitle>Valor</C.InputTitle>
+        <C.Input type="number" value={isNaN(valueField) ? 0 : valueField} onChange={e => setValueField(isNaN(parseFloat(e.target.value)) ? 0 : parseFloat(e.target.value))}/>
+      </C.InputLabel>
+
+      <C.InputLabel>
+        <C.InputTitle>&nbsp;</C.InputTitle>
+        <C.Button onClick={handleAddEvent}>Adicionar</C.Button>
+      </C.InputLabel>
+    </C.Container>
   );
 }

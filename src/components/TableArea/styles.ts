@@ -5,8 +5,8 @@ export const Table = styled.table`
     padding: 20px 25px;
     margin-top: 20px;
     background-color: #FFF;
-    box-shadow: 0px 0px 5px #CCC;
-    border-radius: 10px;
+    box-shadow: 2px 2px 0px #bbb;
+    border-spacing: 0 3px;
 
     @media (max-width: 750px) {
         padding: 10px 12px;
@@ -21,7 +21,7 @@ export const Table = styled.table`
 
 export const TableHeadColumn = styled.th<{ width?: number }>`
     width: ${props => props.width ? `${props.width}px` : 'auto'};
-    padding: 10px 10px 10px 0;
+    padding: 10px;
     text-align: left;
 
     @media (max-width: 750px) {

@@ -32,7 +32,7 @@ export const TableItem = ({ item, onClick2 }: Props) => {
                 </C.Value>
             </C.TableColumn>
             <C.TableColumn>
-                <C.Button onClick={onClick2}/>
+                <C.Button onClick={onClick2}>✖</C.Button>
             </C.TableColumn>
         </C.TableLine>
     )

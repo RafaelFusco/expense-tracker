@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const TableLine = styled.tr`
-
+    width: 100%;
+    background-color: #e7e7e7;
+    border-radius: 5px;
 `
 
-export const TableColumn = styled.td< { padding?: string }>`
-    padding: 10px 5px 10px 0;
+export const TableColumn = styled.td<{ padding?: string }>`
+    padding: 10px;
 `
 export const Category = styled.div<{ color: string }>`
     display: inline-block;
@@ -20,6 +22,9 @@ export const Value = styled.div<{ color: string }>`
 `
 
 export const Button = styled.button`
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    padding: 0;
 `
